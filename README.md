@@ -1,5 +1,5 @@
 # Strava Experiments
-A personal development project to familiarise myself with Spring Boot, with a TDD approach focused the outputs of the REST API.
+A personal development project to familiarise myself with Spring Boot, with a TDD approach focused on the outputs of the REST API.
 
 ### Getting Started
 * Docker desktop will need to be running in order to run this project.
