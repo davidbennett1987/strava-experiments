@@ -1,0 +1,58 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "name": "Dummy activity 1",
+      "sport_type": "Run",
+      "start_date": "2024-01-01T12:00:00Z",
+      "elapsed_time": 1080,
+      "moving_time": 1080,
+      "start_latlng": {
+        "latitude": 50.40216,
+        "longitude": -3.89794
+      },
+      "end_latlng": {
+        "latitude": 50.40216,
+        "longitude": -3.89794
+      },
+      "distance": 5000.0,
+      "version": null
+    },
+    {
+      "id": 2,
+      "name": "Dummy activity 2",
+      "sport_type": "Run",
+      "start_date": "2024-02-01T12:00:00Z",
+      "elapsed_time": 2050,
+      "moving_time": 2050,
+      "start_latlng": {
+        "latitude": 50.40216,
+        "longitude": -3.89794
+      },
+      "end_latlng": {
+        "latitude": 50.40216,
+        "longitude": -3.89794
+      },
+      "distance": 7000.0,
+      "version": null
+    },
+    {
+      "id": 3,
+      "name": "Dummy activity 3",
+      "sport_type": "Ride",
+      "start_date": "2024-03-01T12:00:00Z",
+      "elapsed_time": 5050,
+      "moving_time": 5050,
+      "start_latlng": {
+        "latitude": 50.40216,
+        "longitude": -3.89794
+      },
+      "end_latlng": {
+        "latitude": 50.40216,
+        "longitude": -3.89794
+      },
+      "distance": 12000.0,
+      "version": null
+    }
+  ]
+}

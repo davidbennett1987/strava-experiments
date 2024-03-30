@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: always
+    environment:
+      - 'POSTGRES_DB=strava'
+      - 'POSTGRES_PASSWORD=PASSWORD'
+      - 'POSTGRES_USER=USER'
+    ports:
+      - '54320:5432'
