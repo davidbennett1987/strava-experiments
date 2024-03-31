@@ -17,15 +17,15 @@ class ActivityController {
 
     @GetMapping
     List<Activity> findAll(@RequestParam Optional<String> sport, @RequestParam Optional<Float> distanceGte) {
-        Boolean querySport = !(sport.orElse("").isEmpty());
-        Boolean queryDistance = !(distanceGte.orElse(0F) == 0F);
+        Boolean isSportQuery = !(sport.orElse("").isEmpty());
+        Boolean isDistanceQuery = !(distanceGte.orElse(0F) == 0F);
 
-        // TODO: Clean this up...
-        if (querySport && queryDistance) {
+        // TODO: Clean this up, would like to replace the else ifs with some kind of query interface...
+        if (isSportQuery && isDistanceQuery) {
             return activityRepository.findBySportTypeIgnoreCaseAndDistanceGreaterThanEqual(sport.get(), distanceGte.get());
-        } else if (queryDistance) {
+        } else if (isDistanceQuery) {
             return activityRepository.findByDistanceGreaterThanEqual(distanceGte.get());
-        } else if (querySport) {
+        } else if (isSportQuery) {
             return activityRepository.findBySportTypeIgnoreCase(sport.get());
         }
 
@@ -34,17 +34,17 @@ class ActivityController {
 
     @GetMapping("/best-effort")
     Optional<Activity> bestEffort(@RequestParam Optional<String> sport, @RequestParam Optional<Float> distanceGte) {
-        Boolean querySport = !(sport.orElse("").isEmpty());
-        Boolean queryDistance = !(distanceGte.orElse(0F) == 0F);
+        Boolean isSportQuery = !(sport.orElse("").isEmpty());
+        Boolean isDistanceQuery = !(distanceGte.orElse(0F) == 0F);
 
-        // TODO: Clean this up...
-        if (querySport && queryDistance) {
+        // TODO: Clean this up, would like to replace the else ifs with some kind of query interface...
+        if (isSportQuery && isDistanceQuery) {
             return Optional.ofNullable(activityRepository.findTopBySportTypeIgnoreCaseAndDistanceGreaterThanEqual(sport.get(), distanceGte.get(), Sort.by("elapsedTime"))
                     .orElseThrow(ActivityNotFoundException::new));
-        } else if (queryDistance) {
+        } else if (isDistanceQuery) {
             return Optional.ofNullable(activityRepository.findTopByDistanceGreaterThanEqual(distanceGte.get(), Sort.by("elapsedTime"))
                     .orElseThrow(ActivityNotFoundException::new));
-        } else if (querySport) {
+        } else if (isSportQuery) {
             return Optional.ofNullable(activityRepository.findTopBySportTypeIgnoreCase(sport.get(), Sort.by("elapsedTime"))
                     .orElseThrow(ActivityNotFoundException::new));
         }
