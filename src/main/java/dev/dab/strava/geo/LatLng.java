@@ -18,6 +18,22 @@ public class LatLng {
 
     private LatLng() {}
 
+    public double getLatitude() {
+        return latitude;
+    }
+
+    private void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    private void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
     private void extractLatLng(String latLngString) throws IllegalArgumentException {
         String[] latLngParts = latLngString.split(",");
 
@@ -34,22 +50,6 @@ public class LatLng {
         } catch (NumberFormatException | NullPointerException nfe) {
             throw new IllegalArgumentException("Invalid latLng");
         }
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    private void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    private void setLongitude(double longitude) {
-        this.longitude = longitude;
     }
 
     @Override
